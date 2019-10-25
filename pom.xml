@@ -34,6 +34,7 @@
     　在dependencyManagement下申明的dependencies，Maven并不会去实际下载所依赖的jar包-->
     <dependencyManagement>
         <dependencies>
+            <!--Dubbo依赖-->
             <dependency>
                 <groupId>com.alibaba.boot</groupId>
                 <artifactId>dubbo-spring-boot-starter</artifactId>
@@ -44,12 +45,18 @@
                 <artifactId>dubbo-spring-boot-actuator</artifactId>
                 <version>${dubbo-springboot.version}</version>
             </dependency>
+            <!--zookeeper依赖-->
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>0.10</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <!--依赖会传给子类-->
     <dependencies>
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
@@ -69,17 +76,17 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-
+        </dependency>-->
     </dependencies>
 
-    <build>
+    <!--实践证明plugins也会传到子项目-->
+    <!--<build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-    </build>
+    </build>-->
 
 </project>

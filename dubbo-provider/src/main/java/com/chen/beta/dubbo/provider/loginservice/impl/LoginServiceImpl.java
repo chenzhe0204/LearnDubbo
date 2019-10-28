@@ -10,11 +10,11 @@ import org.springframework.stereotype.Component;
 @Service
 public class LoginServiceImpl implements LoginService {
 
-    @Value("name")
-    private String name;
+    @Value("${name}")
+    private String userName;
 
     @Override
     public String login() {
-        return name;
+        return userName;
     }
 }

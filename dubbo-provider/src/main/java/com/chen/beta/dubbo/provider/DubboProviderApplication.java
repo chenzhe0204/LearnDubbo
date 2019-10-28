@@ -7,8 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-// 开启dubbo的自动配置
-@EnableDubboConfig
+// 开启dubbo
+@EnableDubbo
 @SpringBootApplication
 public class DubboProviderApplication {
 

@@ -8,6 +8,7 @@ class DubboProviderApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }

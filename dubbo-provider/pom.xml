@@ -78,9 +78,16 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!--quartz-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-quartz</artifactId>
+        </dependency>
+
+        <!-- druid数据源 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
         </dependency>
     </dependencies>
 

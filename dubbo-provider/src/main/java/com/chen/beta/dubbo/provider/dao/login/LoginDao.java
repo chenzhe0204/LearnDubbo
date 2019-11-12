@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface LoginDao {
     public List<Users> getUsers();
+
+    public Users getUser(Users users);
 }

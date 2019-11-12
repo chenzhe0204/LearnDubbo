@@ -13,6 +13,10 @@
         SELECT * from t_user;
     </select>
 
+    <select id="getUser" parameterType="com.chen.beta.dubbo.api.entity.Users" resultType="com.chen.beta.dubbo.api.entity.Users">
+        SELECT * FROM t_user WHERE account=#{users.account} AND password=#{users.password};
+    </select>
+
 
 
 </mapper>

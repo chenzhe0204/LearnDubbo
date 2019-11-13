@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 import java.util.List;
 
 
@@ -43,13 +45,15 @@ public class LoginController {
      * @return
      */
     @RequestMapping(value = "/hello")
-    public String Hello(Model model, Users user) {
+    public String Hello(HttpSession session, Users user) {
         if (user.getAccount() == null || user.getPassword() == null){
-            model.addAttribute("user",new Users());
+            //model.addAttribute("user",new Users());
+            session.setAttribute("user",new Users());
             return "login";
         }
         Users users = loginService.getUser(user);
-        model.addAttribute("users", users);
+        //model.addAttribute("users", users);
+        session.setAttribute("user",users);
         return "hello";
     }
 
